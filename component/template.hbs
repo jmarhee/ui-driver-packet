@@ -3,13 +3,13 @@
   {{#if (eq step 1)}}
   <div class="box mt-20">
     <h4>
-      {{t "nodeDriver.packet.accountSection"}}
+      {{t "nodeDriver.metal.accountSection"}}
     </h4>
 
     <div class="row inline-form">
       <div class="col span-6">
         <label class="acc-label">
-          {{t "nodeDriver.packet.projectId.label"}}{{field-required}}
+          {{t "nodeDriver.metal.projectId.label"}}{{field-required}}
         </label>
         {{#input-or-display editable=(not dataFetched) value=config.projectId}}
         {{input
@@ -17,13 +17,13 @@
                 name="username"
                 value=config.projectId
                 classNames="form-control"
-                placeholder=(t "nodeDriver.packet.projectId.placeholder")
+                placeholder=(t "nodeDriver.metal.projectId.placeholder")
               }}
         {{/input-or-display}}
       </div>
       <div class="col span-6">
         <label class="acc-label">
-          {{t "nodeDriver.packet.apiKey.label"}}{{field-required}}
+          {{t "nodeDriver.metal.apiKey.label"}}{{field-required}}
         </label>
         {{#input-or-display editable=(not dataFetched) value=config.apiKey obfuscate=true}}
         {{input
@@ -31,11 +31,11 @@
                 name="password"
                 value=config.apiKey
                 classNames="form-control"
-                placeholder=(t "nodeDriver.packet.apiKey.placeholder")
+                placeholder=(t "nodeDriver.metal.apiKey.placeholder")
               }}
         {{/input-or-display}}
         <p class="text-info">
-          {{t "nodeDriver.packet.apiKeyHelp" htmlSafe=true}}
+          {{t "nodeDriver.metal.apiKeyHelp" htmlSafe=true}}
         </p>
       </div>
     </div>
@@ -43,8 +43,8 @@
 
   {{top-errors errors=errors}}
   {{save-cancel
-        createLabel="nodeDriver.packet.loginAction"
-        savingLabel="nodeDriver.packet.authentication"
+        createLabel="nodeDriver.metal.loginAction"
+        savingLabel="nodeDriver.metal.authentication"
         save=(action "authPacket")
         cancel=(action "cancel")
       }}
@@ -56,11 +56,11 @@
   </div>
 
   <div class="box mt-20">
-    <h4>{{t "nodeDriver.packet.location"}}</h4>
+    <h4>{{t "nodeDriver.metal.location"}}</h4>
     <div class="row inline-form mt-20">
       <div class="col span-2 col-inline">
         <label class="acc-label">
-          {{t "nodeDriver.packet.region.label"}}
+          {{t "nodeDriver.metal.region.label"}}
         </label>
       </div>
       <div class="col span-10">
@@ -76,12 +76,12 @@
   </div>
 
   <div class="box mt-20">
-    <h4>{{t "nodeDriver.packet.instanceOptionsSection"}}</h4>
+    <h4>{{t "nodeDriver.metal.instanceOptionsSection"}}</h4>
 
     <div class="row inline-form">
       <div class="col span-6">
         <label class="acc-label">
-          {{t "nodeDriver.packet.image.label"}}
+          {{t "nodeDriver.metal.image.label"}}
         </label>
         <select class="form-control" onchange={{action (mut config.os) value="target.value"}}>
           {{#each osChoices as |choice|}}
@@ -108,7 +108,7 @@
       <div class="col span-6">
 
         <label class="acc-label">
-          {{t "nodeDriver.packet.size.label"}}
+          {{t "nodeDriver.metal.size.label"}}
         </label>
         <select class="form-control" onchange={{action (mut config.plan) value="target.value"}}>
           {{#each planChoices as |choice|}}
@@ -126,10 +126,10 @@
 
     </div>
     <div class="row mt-20">
-      <h4>{{t "nodeDriver.packet.planDetails.label"}}</h4>
+      <h4>{{t "nodeDriver.metal.planDetails.label"}}</h4>
       <div class="col span-6">
         <label class="acc-label">
-          {{t "nodeDriver.packet.planDetails.cpu"}}
+          {{t "nodeDriver.metal.planDetails.cpu"}}
         </label>
         {{#each planChoiceDetails.specs.cpus as |plan|}}
         <div>
@@ -139,7 +139,7 @@
       </div>
       <div class="col span-6">
         <label class="acc-label">
-          {{t "nodeDriver.packet.planDetails.memory"}}
+          {{t "nodeDriver.metal.planDetails.memory"}}
         </label>
         <div>
           {{planChoiceDetails.specs.memory.total}}
@@ -149,7 +149,7 @@
     <div class="row">
       <div class="col span-6">
         <label class="acc-label">
-          {{t "nodeDriver.packet.planDetails.drives"}}
+          {{t "nodeDriver.metal.planDetails.drives"}}
         </label>
         {{#each planChoiceDetails.specs.drives as |plan|}}
         <div>
@@ -159,7 +159,7 @@
       </div>
       <div class="col span-6">
         <label class="acc-label">
-          {{t "nodeDriver.packet.planDetails.network"}}
+          {{t "nodeDriver.metal.planDetails.network"}}
         </label>
         {{#each planChoiceDetails.specs.nics as |plan|}}
         <div>
