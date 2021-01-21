@@ -20,13 +20,13 @@ const alias = Ember.computed.alias;
 const isEmpty = Ember.isEmpty;
 
 export default Ember.Component.extend(NodeDriver, {
-  driverName: 'packet',
+  driverName: 'metal',
   facilityChoices: null,
   planChoices: null,
   osChoices: null,
   step: 1,
 
-  config: alias('model.packetConfig'),
+  config: alias('model.metalConfig'),
 
   init() {
     const decodedLayout = window.atob(LAYOUT);
@@ -161,7 +161,7 @@ export default Ember.Component.extend(NodeDriver, {
   bootstrap() {
     let store = get(this, 'globalStore');
     let config = store.createRecord({
-      type: 'packetConfig',
+      type: 'metalConfig',
       projectId: '',
       apiKey: '',
       hwReservationId: '',
@@ -170,7 +170,7 @@ export default Ember.Component.extend(NodeDriver, {
 
     const model = get(this, 'model');
 
-    set(model, 'packetConfig', config);
+    set(model, 'metalConfig', config);
   },
 
   apiRequest(command, opt, out) {
@@ -181,7 +181,7 @@ export default Ember.Component.extend(NodeDriver, {
     if (opt.url) {
       url += opt.url.replace(/^http[s]?\/\//, '');
     } else {
-      url += `${'api.packet.net'}/${command}`;
+      url += `${'api.equinix.com/metal'}/${command}`;
     }
 
     return fetch(url, {
