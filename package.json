@@ -1,5 +1,5 @@
 {
-  "name": "ui-driver-packet",
+  "name": "ui-driver-metal",
   "version": "2.0.0",
   "description": "Skeleton Rancher UI driver for packet docker-machine drivers",
   "repository": {
@@ -36,7 +36,7 @@
     "yargs": "12.0.5"
   },
   "dependencies": {
-    "set-value": "^3.0.1",
-    "minimist": ">=1.2.2"
+    "minimist": ">=1.2.2",
+    "set-value": "^3.0.1"
   }
 }
