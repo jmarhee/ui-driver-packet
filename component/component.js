@@ -46,7 +46,7 @@ export default Ember.Component.extend(NodeDriver, {
   },
 
   actions: {
-    authPacket(savedCB) {
+    authMetal(savedCB) {
       if (!this.validateAuthentication()) {
         savedCB(false);
         return;
