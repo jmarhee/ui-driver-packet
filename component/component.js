@@ -181,7 +181,7 @@ export default Ember.Component.extend(NodeDriver, {
     if (opt.url) {
       url += opt.url.replace(/^http[s]?\/\//, '');
     } else {
-      url += `${'api.equinix.com/metal'}/${command}`;
+      url += `${'api.equinix.com/metal/v1'}/${command}`;
     }
 
     return fetch(url, {
